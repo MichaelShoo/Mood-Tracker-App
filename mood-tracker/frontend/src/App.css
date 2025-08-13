@@ -1,0 +1,363 @@
+/* Custom styles for Mood Tracker */
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Textarea styling for notes input */
+textarea {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+}
+
+textarea::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+textarea:focus {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Enhanced textarea for notes */
+.notes-textarea {
+  color: #1e293b !important;
+  background-color: #ffffff !important;
+  font-family: inherit !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  resize: vertical;
+} 
+
+/* Custom gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.mood-gradient {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Enhanced hover effects */
+.mood-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+/* Custom focus styles */
+.focus-purple:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.5);
+}
+
+/* Mood emoji hover effects */
+.mood-emoji {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.mood-emoji:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Button animations */
+.btn-animate {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animate::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-animate:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Mood selection grid animations */
+.mood-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.mood-option {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mood-option:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.mood-option.selected {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.5);
+}
+
+/* Loading states */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Statistics charts */
+.stat-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.stat-bar:hover {
+  height: 12px;
+}
+
+/* Mobile responsiveness enhancements */
+@media (max-width: 640px) {
+  .mood-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .stat-card {
+    padding: 1rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .bg-white {
+    background-color: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .text-gray-900 {
+    color: #f9fafb;
+  }
+  
+  .text-gray-600 {
+    color: #d1d5db;
+  }
+  
+  .border-gray-200 {
+    border-color: #374151;
+  }
+}
+
+/* Accessibility improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visible for keyboard navigation */
+.focus-visible:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Custom tooltip styles */
+.tooltip {
+  position: relative;
+}
+
+.tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover::before {
+  opacity: 1;
+}
+
+/* Date input styling */
+input[type="date"] {
+  color: #1f2937 !important;
+  background-color: #ffffff !important;
+  position: relative;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  color: #1f2937 !important;
+  background-color: transparent;
+  padding: 0;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  color: #1f2937 !important;
+  background-color: transparent;
+}
+
+input[type="date"]::-webkit-datetime-edit-text {
+  color: #6b7280 !important;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #1f2937 !important;
+  background-color: rgba(139, 92, 246, 0.1);
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: 0 2px;
+  font-weight: 500;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: #8b5cf6;
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  filter: invert(1);
+}
+
+input[type="date"]:focus::-webkit-datetime-edit-month-field,
+input[type="date"]:focus::-webkit-datetime-edit-day-field,
+input[type="date"]:focus::-webkit-datetime-edit-year-field {
+  background-color: rgba(139, 92, 246, 0.2);
+  color: #1f2937 !important;
+}
+
+/* Firefox date input styling */
+input[type="date"]::-moz-focus-inner {
+  border: 0;
+}
+
+/* Better contrast for date input */
+.date-input-enhanced {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  border: 2px solid #e2e8f0 !important;
+  color: #1e293b !important;
+  font-weight: 500 !important;
+}
+
+/* Statistics section styling for better visibility */
+.stats-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.stats-card .mood-emoji {
+  font-size: 3rem !important;
+  line-height: 1 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.stats-card .mood-label {
+  color: #000000 !important;  /* BLACK TEXT */
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.stats-card .mood-percentage {
+  color: #374151 !important;  /* DARK GRAY TEXT */
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+}
+
+.total-entries {
+  color: #000000 !important;  /* BLACK TEXT */
+  font-weight: 800 !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
