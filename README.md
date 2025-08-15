@@ -1,1 +1,1 @@
-This is the repo for my mood-tracker app. 
+This is the repo for my mood-tracker app. It functions as a journal/diary(but with emoji's!).
